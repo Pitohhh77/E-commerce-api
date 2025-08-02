@@ -1,88 +1,107 @@
-E-commerce API 🛍️
-Uma API RESTful completa para um sistema de e-commerce, construída com Flask e SQLAlchemy.
+# 🛒 E-Commerce API
 
-🚀 Visão Geral do Projeto
-Este projeto é uma API de e-commerce robusta, projetada para gerenciar todos os aspectos de uma loja online. A aplicação é construída com Flask, um microframework web leve e poderoso, e utiliza SQLAlchemy para uma gestão de banco de dados eficiente e segura. A autenticação de usuário é tratada de forma simples e eficaz com o Flask-Login.
+Este é um projeto de **API RESTful** para um sistema de **e-commerce** simples, construído com **Python**, **Flask**, **SQLAlchemy** e **SQLite**. Ele permite **registro e login de usuários**, **gerenciamento de produtos**, **carrinho de compras** e **checkout**.
 
-O objetivo principal é fornecer uma base sólida para qualquer plataforma de e-commerce, com endpoints bem definidos para operações essenciais como gerenciamento de produtos, carrinhos de compras e autenticação de usuários.
+---
 
-✨ Funcionalidades Principais
-Autenticação de Usuários: Login e logout seguros com sessões de usuário.
+## 🚀 Tecnologias utilizadas
 
-Gerenciamento de Produtos: CRUD (Create, Read, Update, Delete) de produtos.
+- [Flask](https://flask.palletsprojects.com/)
+- [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/)
+- [Flask-Login](https://flask-login.readthedocs.io/)
+- [Flask-CORS](https://flask-cors.readthedocs.io/)
+- SQLite (banco de dados embutido)
 
-Carrinho de Compras: Adicionar, remover e visualizar itens no carrinho do usuário.
+---
 
-Checkout: Finalizar a compra, limpando o carrinho para novas transações.
+## 📂 Estrutura do projeto
 
-🛠️ Tecnologias e Ferramentas
-O projeto utiliza um conjunto de bibliotecas Python para oferecer uma solução completa e moderna:
+```plaintext
+.
+├── app.py             # Código principal da API
+├── requirements.txt   # Dependências do projeto
+├── swagger.yaml       # Documentação da API
+├── ecommerce.db       # Banco de dados SQLite
+⚙️ Funcionalidades
+✅ Registro de usuários
 
-Flask: O coração da API, fornecendo as rotas e o servidor web.
+✅ Login e logout com sessão autenticada
 
-Flask-SQLAlchemy: Uma poderosa ORM (Object-Relational Mapper) para interagir com o banco de dados.
+✅ CRUD de produtos (criar, ler, atualizar, deletar)
 
-Flask-Login: Para gerenciar de forma segura as sessões de login dos usuários.
+✅ Carrinho de compras (adicionar/remover itens)
 
-Flask-CORS: Habilita o Cross-Origin Resource Sharing, permitindo a integração com aplicações front-end em domínios diferentes.
+✅ Checkout (limpa o carrinho)
 
-Para mais detalhes, confira a lista completa de dependências no arquivo requirements.txt.
+✅ Documentação via Swagger
 
-⚙️ Como Começar
-Siga os passos abaixo para configurar e executar a API em sua máquina local.
+🔐 Autenticação
+O sistema usa Flask-Login para gerenciar sessões de usuário. Algumas rotas exigem autenticação.
 
-Pré-requisitos
-Python 3.x
+📌 Rotas principais
+POST /register → Cria novo usuário
 
-pip (gerenciador de pacotes do Python)
+POST /login → Login do usuário
 
-Instalação
-Clone este repositório:
+POST /logout → Logout do usuário
 
-Bash
+POST /api/products/add → Adiciona produto (login obrigatório)
 
+DELETE /api/products/delete/<product_id> → Deleta produto (login obrigatório)
+
+PUT /api/products/update/<product_id> → Atualiza produto (login obrigatório)
+
+GET /api/products → Lista todos os produtos
+
+POST /api/cart/add/<product_id> → Adiciona item no carrinho (login obrigatório)
+
+DELETE /api/cart/remove/<product_id> → Remove item do carrinho (login obrigatório)
+
+GET /api/cart → Lista itens do carrinho (login obrigatório)
+
+POST /api/cart/checkout → Finaliza compra (login obrigatório)
+
+📃 Documentação
+A documentação da API está disponível no arquivo swagger.yaml.
+Você pode importar no Swagger Editor para testar as rotas.
+
+▶️ Como executar
+1️⃣ Clone este repositório:
+
+bash
+Copiar
+Editar
 git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-Crie e ative um ambiente virtual (recomendado):
+2️⃣ Crie um ambiente virtual (opcional):
 
-Bash
-
+bash
+Copiar
+Editar
 python -m venv venv
-# No Windows:
-venv\Scripts\activate
-# No macOS/Linux:
-source venv/bin/activate
-Instale as dependências do projeto:
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+3️⃣ Instale as dependências:
 
-Bash
-
+bash
+Copiar
+Editar
 pip install -r requirements.txt
-Executando a Aplicação
-A API utiliza o SQLite como banco de dados, e o arquivo ecommerce.db já está configurado. Basta executar o arquivo principal:
+4️⃣ Execute:
 
-Bash
-
+bash
+Copiar
+Editar
 python app.py
-A API estará disponível em http://127.0.0.1:5000.
+O servidor rodará em: http://127.0.0.1:5000
 
-🗺️ Documentação da API
-A documentação da API é detalhada no arquivo swagger.yaml. Você pode usar esta especificação para testar os endpoints com ferramentas como Swagger UI ou Postman.
+🗃️ Banco de dados
+Este projeto usa SQLite (ecommerce.db). Para resetar, basta deletar o arquivo .db e rodar novamente.
 
-Aqui estão os principais endpoints para referência:
+🙌 Contribuições
+Contribuições são bem-vindas!
+Abra uma issue ou Pull Request. 🚀
 
-Método	Endpoint	Descrição
-POST	/login	Autentica um usuário.
-POST	/logout	Encerra a sessão do usuário.
-GET	/api/products	Lista todos os produtos disponíveis.
-GET	/api/products/{product_id}	Obtém detalhes de um produto específico.
-POST	/api/cart/add/{product_id}	Adiciona um produto ao carrinho.
-GET	/api/cart	Visualiza o conteúdo do carrinho.
-POST	/api/cart/checkout	Finaliza a compra e limpa o carrinho.
+📜 Licença
+Este projeto é de uso educacional. Modifique e use à vontade.
 
-Exportar para as Planilhas
-🤝 Contribuição
-Sua colaboração é muito bem-vinda! Se você tem ideias para melhorias, encontrou um bug ou quer adicionar novas funcionalidades, sinta-se à vontade para:
-
-Abrir uma Issue descrevendo a sua sugestão.
-
-Criar um Pull Request com suas alterações.
+Desenvolvido por Pedro Henrique
