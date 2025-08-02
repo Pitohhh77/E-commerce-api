@@ -22,7 +22,10 @@ Este é um projeto de **API RESTful** para um sistema de **e-commerce** simples,
 ├── requirements.txt   # Dependências do projeto
 ├── swagger.yaml       # Documentação da API
 ├── ecommerce.db       # Banco de dados SQLite
+````
+
 ⚙️ Funcionalidades
+
 ✅ Registro de usuários
 
 ✅ Login e logout com sessão autenticada
