@@ -21,10 +21,10 @@ Este é um projeto de **API RESTful** para um sistema de **e-commerce** simples,
 ├── app.py             # Código principal da API
 ├── requirements.txt   # Dependências do projeto
 ├── swagger.yaml       # Documentação da API
+
 ├── ecommerce.db       # Banco de dados SQLite
 ````
-
-##⚙️ Funcionalidades
+## ⚙️ Funcionalidades
 
 ✅ Registro de usuários
 
@@ -38,10 +38,10 @@ Este é um projeto de **API RESTful** para um sistema de **e-commerce** simples,
 
 ✅ Documentação via Swagger
 
-##🔐 Autenticação
+## 🔐 Autenticação
 O sistema usa Flask-Login para gerenciar sessões de usuário. Algumas rotas exigem autenticação.
 
-##📌 Rotas principais
+## 📌 Rotas principais
 POST /register → Cria novo usuário
 
 POST /login → Login do usuário
@@ -64,18 +64,18 @@ GET /api/cart → Lista itens do carrinho (login obrigatório)
 
 POST /api/cart/checkout → Finaliza compra (login obrigatório)
 
-##📃 Documentação
+## 📃 Documentação
 A documentação da API está disponível no arquivo swagger.yaml.
 Você pode importar no Swagger Editor para testar as rotas.
 
 ▶️ Como executar
-1️⃣ Clone este repositório:
+## 1️⃣ Clone este repositório:
 
 bash
 Copiar
 Editar
 git clone https://github.com/seu-usuario/seu-repositorio.git
-##2️⃣ Crie um ambiente virtual (opcional):
+## 2️⃣ Crie um ambiente virtual (opcional):
 
 bash
 Copiar
@@ -83,13 +83,13 @@ Editar
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
-##3️⃣ Instale as dependências:
+## 3️⃣ Instale as dependências:
 
 bash
 Copiar
 Editar
 pip install -r requirements.txt
-##4️⃣ Execute:
+## 4️⃣ Execute:
 
 bash
 Copiar
@@ -97,14 +97,14 @@ Editar
 python app.py
 O servidor rodará em: http://127.0.0.1:5000
 
-##🗃️ Banco de dados
+## 🗃️ Banco de dados
 Este projeto usa SQLite (ecommerce.db). Para resetar, basta deletar o arquivo .db e rodar novamente.
 
-##🙌 Contribuições
+## 🙌 Contribuições
 Contribuições são bem-vindas!
 Abra uma issue ou Pull Request. 🚀
 
-##📜 Licença
+## 📜 Licença
 Este projeto é de uso educacional. Modifique e use à vontade.
 
 Desenvolvido por Pedro Henrique
